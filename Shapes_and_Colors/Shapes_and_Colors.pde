@@ -33,8 +33,7 @@ noStroke();
 fill(BrightRed);
 rect(SmallSquare.x, SmallSquare.y, 250, 250);
 
-  // this saves the canvas on the first frame
-  // so we can get a clean image of the output easily
+
   if (frameCount == 1) {
     String filename = "Shapes and Colors";
     save(filename + ".png");
