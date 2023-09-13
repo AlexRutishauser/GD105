@@ -1,4 +1,5 @@
 //Geometric Shapes / 230828
+//Link to Image: https://64.media.tumblr.com/9ddca62be4c80cf7d03c8155490228bc/9bef6c1cb634bc23-ab/s1280x1920/b00708d07c289bfdffbf98191dc55926ce4f9255.png
 
 void setup() {
   size(1280, 1280);
@@ -105,7 +106,7 @@ void draw() {
   noFill();
   strokeWeight(15);
   stroke(DarkBlue);
-  translate(1118, 0);                    //CHECK YOUR WORK HERE (EVERYTHING IS BLUE)
+  translate(1118, 0);                    
   rotate(1.60);
   scale(0.54);
   triangle(120, 300, 232, 170, 344, 300);
@@ -115,7 +116,7 @@ void draw() {
 
   //Blue Triangle on Bottom
   noFill();
-  strokeWeight(11);
+  strokeWeight(8);
   translate(-845, 2064);
   rotate(3.14);
   scale(1.70);
@@ -128,23 +129,70 @@ void draw() {
 
   //Bottom Lines on Triangle
   line(411, 230, 230, 30);
-  line(411, 231, 228, 33);
+    line(415, -200, 210, -375);
 
-  line(-740, -255, -625, -135);//This is a dark blue line
+//Lines in Second Row Of Triangle
+   line(-30, -180, -240, -350);
+    line(-246, 58, -20, 250);
 
+//Lines in Top Row of Triangles
   line(-800, -573, -567, -390);
-  line(-1490, -616, -2882, 774);//This is a dark blue line
+  stroke(DarkBlue);
+  line(-740, -255, -625, -135);//This is a dark blue line
+  
+  stroke(DarkBlue);
+  line(-1430, -697, -2885, 775);//This is a dark blue line off canvas
 
-  line(-1650, -110, -1420, 125);//This is a Blue Line outlier
+stroke(BrightBlue);
+  line(-1700, -100, -1493, 114);//This is a Blue Line outlier
 
-  line(415, -200, 210, -375);
-  line(-246, 58, -20, 250);
+
+//Circles Section
+
+//Blue Circles
+translate(-699,-371);
+fill(DarkBlue);
+stroke(DarkBlue);
+circle(224, 184, 220);
+
+translate(-25,-835);
+circle(224, 184, 220);
+
+translate(-890,0);
+circle(224, 184, 220);
+
+translate(0, 875);
+circle(224, 184, 220);
+
+//Black Circle
+stroke(Black);
+fill(Black);
+translate(1200, -120);
+circle(224, 184, 100);
+
+//Purple Circle
+stroke(Purple);
+fill(Purple);
+translate(-830, 215);
+circle(224, 184, 60);
+
+
 
   //Square Section
-
-  //3 Squares off the top of the canvas
-  translate(50, 50);
+  
+//3 Black Squares (Left To Right)
+stroke(Black);
+  fill(Black);
+    rotate(-0.03);
+    translate(-90, 1143);
   square(120, 100, 220);
+  
+  translate(0, -432);
+  square(120, 100, 220);
+  
+  translate(9, -471);
+  square(120, 100, 220);
+  
 
 
   if (frameCount == 1) {
