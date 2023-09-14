@@ -2,7 +2,7 @@
 //https://mdash.mmlafleur.com/wp-content/uploads/2013/09/29182659/1a1.jpg
   
   void setup(){
-  size(1000, 1000);
+  size(534, 534);
 }
 
 void draw() {
@@ -10,8 +10,8 @@ background(150);
 
 
 PVector BackGroundSquare = new PVector (0, 0);
-PVector MiddleSquare = new PVector (250,329);
-PVector SmallSquare = new PVector (383,585);
+PVector MiddleSquare = new PVector (100,160);
+PVector SmallSquare = new PVector (150,240);
 
 //Colors for Squares
 color blue = #3282BE;
@@ -21,17 +21,17 @@ color BrightRed = #F33900;
 //BACKGROUND SQUARE
 noStroke();
 fill(blue);
-rect(BackGroundSquare.x, BackGroundSquare.y, 1000, 1000); 
+rect(BackGroundSquare.x, BackGroundSquare.y, 534, 534); 
 
 //Middle Square
 noStroke();
 fill(DarkRed);
-rect(MiddleSquare.x, MiddleSquare.y, 550, 550);
+rect(MiddleSquare.x, MiddleSquare.y, 320, 320);
 
 //Small Square
 noStroke();
 fill(BrightRed);
-rect(SmallSquare.x, SmallSquare.y, 250, 250);
+rect(SmallSquare.x, SmallSquare.y, 215, 215);
 
 
   if (frameCount == 1) {
@@ -39,4 +39,5 @@ rect(SmallSquare.x, SmallSquare.y, 250, 250);
     save(filename + ".png");
     print("canvas saved as " + filename + ".png");
 
+  }
 }
