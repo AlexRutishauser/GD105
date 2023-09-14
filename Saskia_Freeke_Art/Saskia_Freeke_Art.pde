@@ -16,11 +16,17 @@ void draw() {
   stroke(Black);
   strokeWeight(5);
 
+//Square that Will be overlapped by Triangles
+    stroke(DarkBlue);
+    fill(DarkBlue);
+      square(880, 775, 135);
+      
   //We Will Begin With All the Triangles on the Canvas
 
   //Triangles With No Color Fill
 
   //Top Row of Triangles
+  stroke(Black);
   translate(1401, 840);
   noFill();
   rotate(-3.14);
@@ -36,7 +42,8 @@ void draw() {
   //overlap triangle in first row
   translate(-49, 36);
   triangle(120, 300, 232, 170, 344, 300);
-
+  
+ 
   //Second Row of Triangles
   translate(-400, -272);
   noFill();
@@ -110,9 +117,7 @@ void draw() {
   rotate(1.60);
   scale(0.54);
   triangle(120, 300, 232, 170, 344, 300);
-  ;
-
-
+ 
 
   //Blue Triangle on Bottom
   noFill();
@@ -141,7 +146,7 @@ void draw() {
   line(-740, -255, -625, -135);//This is a dark blue line
   
   stroke(DarkBlue);
-  line(-1430, -697, -2885, 775);//This is a dark blue line off canvas
+  line(-1425, -795, -3190, 775);//This is a dark blue line off canvas
 
 stroke(BrightBlue);
   line(-1700, -100, -1493, 114);//This is a Blue Line outlier
@@ -177,8 +182,8 @@ translate(-830, 215);
 circle(224, 184, 60);
 
 
-
-  //Square Section
+ 
+ //Square Section
   
 //3 Black Squares (Left To Right)
 stroke(Black);
@@ -193,9 +198,35 @@ stroke(Black);
   translate(9, -471);
   square(120, 100, 220);
   
+  
+  //Purple Border Square in Rectangle
+  stroke(Purple);
+  strokeWeight(7);
+  fill(Black);
+  square(700, 965, 50);
+  
+  //Blue Squares On Top of Canvas (Left To Right)
+  stroke(DarkBlue);
+  fill(DarkBlue);
+  square(-115, 1000, 220);
+  square(0, 500, 220);
+  square(-108, 95, 220);
+    square(0, -415, 220);
+    
+    //Blue Squares On Middle Canvas (Left to Right)
+      square(755, 980, 220);
+      square(865, 500, 220);
+      square(750, 45, 220);
+      
+      //Squares Off Canvas on Top
+      stroke(Black);
+      fill(Black);
+        square(-795, 1050, 220);
+        square(-795, 685, 220);
+        square(-795, 315, 220);
 
-
-  if (frameCount == 1) {
+      
+     if (frameCount == 1) {
     String filename = "Shapes and Colors";
     save(filename + ".png");
     print("canvas saved as " + filename + ".png");

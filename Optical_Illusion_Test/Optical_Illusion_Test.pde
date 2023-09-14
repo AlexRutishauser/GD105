@@ -102,10 +102,10 @@ void draw() {
     line(BottomPoint.x + 290, BottomPoint.y + 115, TopPoint.x + 250, TopPoint.y + 390);
 
   // 2nd Square (small)
-      line(BottomPoint.x + 65, BottomPoint.y + 140, TopPoint.x + 248, TopPoint.y + 325);
-      line(BottomPoint.x + 183, BottomPoint.y + 140, TopPoint.x + 250, TopPoint.y + 325);
-      line(BottomPoint.x + 140, BottomPoint.y + 40, TopPoint.x + 325, TopPoint.y + 245);
-      line(BottomPoint.x + 65, BottomPoint.y + 135, TopPoint.x + 243, TopPoint.y + 179);
+      line(BottomPoint.x + 65, BottomPoint.y + 115, TopPoint.x + 250, TopPoint.y + 305);
+      line(BottomPoint.x + 185, BottomPoint.y + 115, TopPoint.x + 250, TopPoint.y + 305);
+      line(BottomPoint.x + 130, BottomPoint.y + 45, TopPoint.x + 310, TopPoint.y + 241);
+      line(BottomPoint.x + 65, BottomPoint.y + 115, TopPoint.x + 250, TopPoint.y + 175);
 
 
   
