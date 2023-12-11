@@ -11,7 +11,7 @@ PImage city;
 PVector taxi;
 float moveSpeed = 5;
 boolean up, down;
-
+int cityx, cityy; 
 
 
 
@@ -21,17 +21,21 @@ void setup() {
   car = loadImage("taxi.png");
   road = loadImage("roadTexture_72.png");
   city = loadImage("city.png");
-  city.resize (width, height);
+  city.resize (1024, 525);
   noSmooth();
   frameRate(120);
 }
 
 void draw() {
-  //background(city);
-  
-  image(city, 0,0);
- 
-  
+
+//Loop Background
+  image(city, cityx, cityy);
+  image(city, cityx + width, cityy);
+  cityx = cityx - 3; //Speed of Background 
+  if (cityx < -city.width){
+    cityx = 0;}
+
+
   //Road for taxi
   for (int i = 0; i < 3; i++) {
     image(road, i * 512, 512, width/2, height/2);
