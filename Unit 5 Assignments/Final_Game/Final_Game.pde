@@ -5,35 +5,35 @@
 //Brainstorm: Taxi Frenzy (Drive a taxi in a city without causing any accidents! If
 //you hit someone or something you lose!)
 
-PImage car;
-PImage road;
-PImage city;
-PVector taxi;
+PImage car, road, city, firetruck;
+PVector taxi, fire;
 float moveSpeed = 5;
 boolean up, down;
-int cityx, cityy; 
+int cityx, cityy;
 
 
 
 void setup() {
   size(1024, 1024);
   taxi = new PVector (5, 700);
+  fire = new PVector (900, random(550, 870));
   car = loadImage("taxi.png");
+  firetruck = loadImage("firetruck.png");
   road = loadImage("roadTexture_72.png");
   city = loadImage("city.png");
   city.resize (1024, 525);
   noSmooth();
-  frameRate(120);
 }
 
 void draw() {
 
-//Loop Background
+  //Loop Background
   image(city, cityx, cityy);
   image(city, cityx + width, cityy);
-  cityx = cityx - 3; //Speed of Background 
-  if (cityx < -city.width){
-    cityx = 0;}
+  cityx = cityx - 3; //Speed of Background
+  if (cityx < -city.width) {
+    cityx = 0;
+  }
 
 
   //Road for taxi
@@ -41,8 +41,18 @@ void draw() {
     image(road, i * 512, 512, width/2, height/2);
   }
 
-  image(car, taxi.x, taxi.y, car.width * 5, car.height * 5);
+//car obstacles
 
+//firetruck
+  image(firetruck, fire.x, fire.y, firetruck.width * 5, firetruck.height * 5);
+ fire.x = fire.x - 10; //Speed of firetruck
+  if (fire.x < -firetruck.width) {
+    fire.x = -1024;
+  }
+
+
+//taxi (Main player)
+  image(car, taxi.x, taxi.y, car.width * 5, car.height * 5);
 
   //Movement Mechanics & Constraints
 
@@ -59,6 +69,7 @@ void draw() {
   }
 }
 
+//Movement Constraints
 void keyPressed() {
   if (key == 'w' || key == 'W') {
     up = true;
