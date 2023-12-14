@@ -9,6 +9,7 @@ PImage car, road, city, firetruck, police, sedan, bus;
 PVector taxi, fire, car1, car2, car3;
 float moveSpeed = 5;
 float displayScale = 5;
+float score = frameCount;
 boolean up, down;
 int cityx, cityy;
 
@@ -45,6 +46,10 @@ void draw() {
   if (cityx < -city.width) {
     cityx = 0;
   }
+  
+  //score 
+  textSize(100);
+  text(frameCount, 0, 512);
 
 
   //Road for taxi
@@ -56,28 +61,28 @@ void draw() {
   //firetruck
   image(firetruck, fire.x, fire.y, firetruck.width * displayScale, firetruck.height * displayScale);
   fire.x = fire.x - random (6, 8); //Speed
-  if (fire.x < -firetruck.width) {
+  if (fire.x < -firetruck.width * displayScale) {
     fire.x = random (1080, 2050);
   }
 
   //second car
   image(sedan, car1.x, car1.y, sedan.width * displayScale, sedan.height * displayScale);
   car1.x = car1.x - random (6, 8); //Speed
-  if (car1.x < -sedan.width) {
+  if (car1.x < -sedan.width * displayScale) {
     car1.x = random (1080, 2050);
   }
 
   //third car
   image(police, car2.x, car2.y, police.width * displayScale, police.height * displayScale);
   car2.x = car2.x - 8; //Speed
-  if (car2.x < -police.width) {
+  if (car2.x < -police.width * displayScale) {
     car2.x = random (1080, 2050);
   }
 
   //fourth car
   image(bus, car3.x, car3.y, bus.width * displayScale, bus.height * displayScale);
   car3.x = car3.x - random (6, 8); //Speed
-  if (car3.x < -bus.width) {
+  if (car3.x < -bus.width * displayScale) {
     car3.x = random (1080, 2050);
   }
 
@@ -123,7 +128,6 @@ void draw() {
     text("BOOM Game Over!", 150, 150);
   }
 }
-
 
 //Movement Constraints
 void keyPressed() {
